@@ -1,5 +1,17 @@
+let interval = null;
+
 $("#btnrandom").click(function () {
-  random();
+  // random();
+  if (interval == null) {
+    interval = setInterval(() => {
+      random();
+    }, 100);
+  }
+
+  setTimeout(() => {
+    clearInterval(interval);
+    interval = null;
+  }, 1500);
 });
 
 let kiper = null;
